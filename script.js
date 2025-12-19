@@ -4,49 +4,6 @@ const timeDisplay = document.getElementById("time");
 
 let score = 0;
 let timeLeft = 30;
-
-function createHeart() {
-  const heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerText = "💖";
-
-  const x = Math.random() * (gameArea.clientWidth - 40);
-  const y = Math.random() * (gameArea.clientHeight - 40);
-
-  heart.style.left = x + "px";
-  heart.style.top = y + "px";
-
-  heart.onclick = () => {
-    score++;
-    scoreDisplay.innerText = score;
-    heart.remove();
-  };
-
-  gameArea.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 1000);
-}
-
-const heartInterval = setInterval(createHeart, 700);
-
-const timer = setInterval(() => {
-  timeLeft--;
-  timeDisplay.innerText = timeLeft;
-
-  if (timeLeft <= 0) {
-    clearInterval(timer);
-    clearInterval(heartInterval);
-    alert("Game Over 💔 Your score: " + score);
-  }
-}, 1000);
-const gameArea = document.getElementById("game-area");
-const scoreDisplay = document.getElementById("score");
-const timeDisplay = document.getElementById("time");
-
-let score = 0;
-let timeLeft = 30;
 let gameRunning = true;
 
 function createHeart() {

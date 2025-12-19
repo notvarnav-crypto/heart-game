@@ -3,7 +3,7 @@ const scoreDisplay = document.getElementById("score");
 const timeDisplay = document.getElementById("time");
 
 let score = 0;
-let timeLeft = 30;
+let timeLeft = 100;
 let gameRunning = true;
 
 function createHeart() {
@@ -30,10 +30,10 @@ function createHeart() {
 
   gameArea.appendChild(heart);
 
-  setTimeout(() => heart.remove(), 900);
+  setTimeout(() => heart.remove(), 2700);
 }
 
-const heartSpawner = setInterval(createHeart, 600);
+const heartSpawner = setInterval(createHeart, 1800);
 
 const timer = setInterval(() => {
   timeLeft--;
